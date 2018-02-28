@@ -1,0 +1,102 @@
+# Hello World program in Python
+    
+print ("Hello World!");                 #wyswietlanie na ekranie
+data = input('Wprowadz dane')           #wczytanie danych z klawiatury
+print (int(data)-4)                     #rzutowanie danych na typ int
+L1=3
+L2=4.5
+T1='6'
+print(L1 + L2)
+def suma(a,b):                          #w pythonie nie trzeba wskazywac jaki typ ma dana
+    return a+b
+print(suma(2,3))
+print(suma('a','b'))
+x = 2
+y=3
+if(x>y):
+    print('wieksze')
+elif(x==y):                             #else if
+    print('rowne')
+else:
+    print('wieksze')
+lista=['a','b','c','d']
+for i in range(len(lista)):             #petla for jak w javie
+    print(lista[i])
+j=0
+while(j<4):                             #petla while
+    print(lista[j])
+    j+=1
+lista2=[1,2,3,'a',4.5]                  #lista moze miec rozne typy danych
+lista2[0]=2
+print(lista2)
+krotka=(1,2,3,'a',4.5)
+print(krotka)
+
+imie = input('Podaj imie')
+nazwisko = input('Podaj nazwisko')
+wiek= input('Podaj wiek')
+print(" ")
+print('Czesc',imie,nazwisko)
+if(int(wiek)<18):
+    print("Jestes niepelnoletni")
+else:
+    print("Jestes pelnoletni")
+liczba1=input('')                        #input jest funkcja wiec trzeba wstawiac nawiasy
+liczba2=input('')
+liczba3=input('')
+wynik=liczba1
+if(int(wynik)<int(liczba2)):             #w funkcjach trzeba rzutowac zmienne na dany typ
+    wynik=liczba2
+if(int(wynik)<int(liczba3)):
+    wynik=liczba3
+print("najwieksza liczba wynosi:",wynik)
+n=input('')
+k=0
+while(k<26):
+    if(int(k)%int(n)==0):                #operator modulo %
+        print(chr(97+k)+chr(65+k),end="")#chr(liczba) wyswietla znak z tablicy ASCII
+    k+=1                                 #end=="" powoduje ze print nie wyswietla znaku konca linii
+print("")
+#sortowanie
+N=input('')
+lista_sort=[]
+j=0
+k=0
+wybor=input("Podaj kierunek sortowania")
+if(wybor=='a'):                         #tutaj jest blad
+    while(int(N)>j):
+        liczbaa=input('')
+        lista_sort.append(liczbaa)
+        if(j>0 and int(lista_sort[j])<int(lista_sort[j-1])):
+            pomoc=lista_sort[j]
+            k=j
+            while(k>0 and int(pomoc)<int(lista_sort[k-1])):
+                lista_sort[k]=lista_sort[k-1]
+                k-=1
+            lista_sort[k]=pomoc
+        j+=1
+else:
+    while(int(N)>j):
+        liczbaa=input('')
+        lista_sort.append(liczbaa)
+        if(j>0 and int(lista_sort[j])>int(lista_sort[j-1])):
+            pomoc=lista_sort[j]
+            k=j
+            while(k>0 and int(pomoc)>int(lista_sort[k-1])):
+                lista_sort[k]=lista_sort[k-1]
+                k-=1
+            lista_sort[k]=pomoc
+        j+=1
+j=0
+print(lista_sort)
+    
+#ciag Fibonacci
+ile=20
+l1=0
+l2=1
+while(j<ile):
+    print(l2,end=" ")                   #zapis end=" " powoduje ze po print mamy spacje a nie nowa linie
+    l2+=l1
+    l1=l2-l1
+    j+=1
+print('')
