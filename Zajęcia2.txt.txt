@@ -1,36 +1,41 @@
+import os
 liczby = range(0,20)
 kwadraty = [x**2 for x in liczby]
 print (kwadraty)
 
 def f1(n):
-    def f2(x):
-        return n-x
-    return f2
+Â Â Â  def f2(x):
+Â Â Â Â Â Â Â  return n-x
+Â Â Â  return f2
 res = f1(5)
 print (res(10))
 
 kwadrat= lambda x: x*x
 print (kwadrat(2))
 
-def funkcja(napis):     #napisz funkcje ktora przyjmuje napis i zwraca liste krotek postaci(slowo, dlugosc_slowa)
-    slowa=napis.split()
-    lista=[(slowo, len(slowo)) for slowo in slowa]         
-    print (lista)
+def funkcja(napis):Â Â Â Â  #napisz funkcje ktora przyjmuje napis i zwraca liste krotek postaci(slowo, dlugosc_slowa)
+Â Â Â  slowa=napis.split()
+Â Â Â  lista=[(slowo, len(slowo)) for slowo in slowa]Â Â Â Â Â Â Â Â Â 
+Â Â Â  print (lista)
 funkcja("Ala ma kota")
 
 k = input('Podaj ile liczb Fibonacciego')
-def Fibonacci(liczba):  #korzystajac z list skladanych napisz funkcje fibonacciego
-    goldenRatio = (1+5**0.5)/2
-    lista2=[int(((goldenRatio)**i- (1-goldenRatio)**i)/(5**0.5)) for i in range(0,liczba)]
-    print (lista2)
+def Fibonacci(liczba):Â  #korzystajac z list skladanych napisz funkcje fibonacciego
+Â Â Â  goldenRatio = (1+5**0.5)/2
+Â Â Â  lista2=[int(((goldenRatio)**i- (1-goldenRatio)**i)/(5**0.5)) for i in range(0,liczba)]
+Â Â Â  print (lista2)
 print("")
 Fibonacci(k)
 
 def fLog(x):
-    return (x>2)
+Â Â Â  return (x>2)
 listaa=[2,1,0,3,4,5,1]
 def Funk(fLog,lista):
-    for x in xrange(len(lista)):
-        if(fLog(lista[x]))
-            print(lista[x])
+Â Â Â  for x in xrange(len(lista)):
+Â Â Â Â Â Â Â  if(fLog(lista[x]))
+Â Â Â Â Â Â Â Â Â Â Â  print(lista[x])
 Funk(fLog,listaa)
+
+path= "/home/student/pk/"
+for plik in os.listdir(path)
+     print (plik)
