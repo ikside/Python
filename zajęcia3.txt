@@ -1,0 +1,85 @@
+class Klasa:
+  def funkcja1(self):
+    print ("Wywolanie metody 1")
+  def funkcja2(self):
+    self.funkcja1() #wywolanie funkcji na samej sobie
+    print ("Wywolanie metody 2")
+obiekt = Klasa()
+obiekt.funkcja2()
+
+class Klasa2:
+  atr1=None
+  __atr2=None     #zmienna prywatna
+  def setAtr2(self,zmienna):
+    self.__atr2=zmienna
+  def setAtr3(self,zmienna):
+    self.atr3=zmienna;    #tworzenie i inicjalizacja zmiennej
+  def add(self):
+    return self.atr1+self.__atr2+self.atr3
+obiekt2=Klasa2()
+obiekt2.atr1=5
+obiekt2.setAtr2(11)
+obiekt2.setAtr3(9)
+print(obiekt2.add())
+
+#dziedziczenie
+class Samochod(object):
+  kolor= None
+  def setKolor(self,kolor):
+    self.kolor=kolor
+class Osobowy(Samochod):
+  marka= "Mercedes"
+samochod= Osobowy()
+samochod.setKolor("niebieski")
+print("to jest %s %s" %(samochod.kolor, samochod.marka))
+
+#super
+class A(object):
+  def metoda(self):
+    print("Wowolanie A")
+class B(A):
+  def metoda(self):
+    super(B,self).metoda()  #wywolanie metody z klasy bazowej
+    print("Wywolanie B")
+obiekt3=B()
+obiekt3.metoda(
+#metody specjalne
+class Klasa3(object):
+  def __init__(self,zmienna):   #konstruktor
+    self.zmienna= zmienna
+  def __add__(self,other):    #przeciazanie operatora add (+)
+    return self.zmienna+other.zmienna
+  def __str__(self):
+    return ("%d" % self.zmienna)
+a=Klasa3(5)
+b=Klasa3(8)
+print(a+b)
+print(a)
+
+#zadanie 1 
+import math
+class liczbaZespolona(object):
+  atributes=[0,0]
+  def __setattr__(self,name,zmienna):
+    if(name=="im"):
+      self.atributes[1]=zmienna
+    elif(name=="re"):
+      self.atributes[0]=zmienna
+    elif(name=="atributes"):
+      self.atributes[0]=zmienna[0]
+      self.atributes[1]=zmienna[1]
+  def __add__(self,other):
+    return (self.atributes[0]+other.atributes[0],self.atributes[1]+other.atributes[1])
+  def __sub__(self,other):
+    return (self.atributes[0]-other.atributes[0],self.atributes[1]-other.atributes[1])
+  def __mul__(self,other):
+    return (self.atributes[0]*other.atributes[0]-self.atributes[1]*other.atributes[1],self.atributes[0]*other.atributes[1]+self.atributes[1]*other.atributes[0])
+  def __div__(self,other):
+    return ((self.atributes[0]*other.atributes[0]+self.atributes[1]*other.atributes[1])/(other.atributes[0]*other.atributes[0]+other.atributes[1]*other.atributes[1]),(self.atributes[1]*other.atributes[0]-self.atributes[0]*other.atributes[1])/(self.atributes[0]*self.atributes[0]+self.atributes[1]*self.atributes[1]))
+  def modul(self):
+    return math.sqrt(self.atributes[0]*self.atributes[0]+self.atributes[1]*self.atributes[1],2)
+  def __str__(self):
+    return("%d + %si" % (self.atributes[0] , self.atributes[1]))
+liczba=liczbaZespolona()
+liczba.atributes=(6,5)
+print(liczba)
