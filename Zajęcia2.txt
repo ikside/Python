@@ -39,3 +39,13 @@ Funk(fLog,listaa)
 path= "/home/student/pk/"
 for plik in os.listdir(path)
      print (plik)
+
+
+#! python
+import sys, os
+#path = input("Podaj sciezke ")
+path="C:\"
+dirs = os.listdir( string(path) )
+
+for file in dirs:
+	print file
