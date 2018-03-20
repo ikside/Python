@@ -13,39 +13,54 @@ print (res(10))
 kwadrat= lambda x: x*x
 print (kwadrat(2))
 
-def funkcja(napis):     #napisz funkcje ktora przyjmuje napis i zwraca liste krotek postaci(slowo, dlugosc_slowa)
+#Zadanie 1
+def funkcja(napis):
     slowa=napis.split()
     lista=[(slowo, len(slowo)) for slowo in slowa]         
     print (lista)
 funkcja("Ala ma kota")
 
+#Zadanie 2
 k = input('Podaj ile liczb Fibonacciego')
-def Fibonacci(liczba):  #korzystajac z list skladanych napisz funkcje fibonacciego
-    goldenRatio = (1+5**0.5)/2
-    lista2=[int(((goldenRatio)**i- (1-goldenRatio)**i)/(5**0.5)) for i in range(0,liczba)]
-    print (lista2)
+k=int(k)
+def Fibonacci(liczba):
+  goldenRatio = (1+5**0.5)/2
+  lista2=[int(((goldenRatio)**i- (1-goldenRatio)**i)/(5**0.5)) for i in range(0,liczba)]
+  print (lista2)
 print("")
 Fibonacci(k)
 
+#Zadanie 3
 def fLog(x):
-    return (x>2)
+  return (x>2)
 listaa=[2,1,0,3,4,5,1]
 def Funk(fLog,lista):
-    for x in xrange(len(lista)):
-        if(fLog(lista[x]))
-            print(lista[x])
-Funk(fLog,listaa)
+  lista2=[]
+  for x in range(len(lista)):
+    if(fLog(lista[x])):
+      lista2.append(lista[x])
+  return lista2
+print (Funk(fLog,listaa))
 
-path= "/home/student/pk/"
-for plik in os.listdir(path)
+#Zadanie 4
+import math
+import operator
+def fun_punkty(lista_punktow,punkt):
+  lista_krotek=[(math.sqrt(math.pow(punkt2[1]-punkt[1],2)+math.pow(punkt2[0]-punkt[0],2)),'punkt'+str(punkt2)) for punkt2 in lista_punktow]
+  lista_krotek.sort(key=operator.itemgetter(0))
+  return lista_krotek
+p0=(1,1)
+p_lista=[(0,0),(1,2),(3,3),(2,1),(1,1),(2,0)]
+print (fun_punkty(p_lista,p0))
+
+#Zadanie 5
+import os,fnmatch
+def generator(sciezka,roz):
+  for plik in os.listdir(sciezka):
+    if fnmatch.fnmatch(plik,'*.'+str(roz)):
      print (plik)
-
-
-#! python
-import sys, os
-#path = input("Podaj sciezke ")
-path="C:\"
-dirs = os.listdir( string(path) )
-
-for file in dirs:
-	print file
+  
+path = input("Podaj sciezke ")
+rozszerzenie = input("Podaj rozszerzenie")
+for nazwa_pliku in generator(path,rozszerzenie):
+  print (nazwa_pliku)
