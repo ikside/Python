@@ -80,6 +80,14 @@ class liczbaZespolona(object):
     return math.sqrt(self.atributes[0]*self.atributes[0]+self.atributes[1]*self.atributes[1],2)
   def __str__(self):
     return("%d + %si" % (self.atributes[0] , self.atributes[1]))
-liczba=liczbaZespolona()
-liczba.atributes=(6,5)
-print(liczba)
+a=liczbaZespolona()
+b=liczbaZespolona()
+c=liczbaZespolona()
+a.atributes=(6,5)
+b.atributes=(4,3)
+print(a)
+print(b)
+c=a+b
+print(c)
+
+
