@@ -1,0 +1,51 @@
+#!/usr/bin/env python 
+# encoding: utf-8
+import sys
+#Zadanie 1
+napis="""k1:w1
+k2:w2
+k3:w3"""
+slownik={}
+for linia in napis.splitlines():
+    element = linia.split(":")
+    slownik[element[0]]=element[1]
+print slownik
+
+#Zadanie 2
+plik= open("plik2.txt")
+napis2=plik.read()
+slownik2={}
+for linia in filter(None,napis2.splitlines()):
+    element = linia.split(":")
+    slownik2[element[0]]=element[1]
+print slownik2
+plik.close()
+
+#Zadanie 3
+#print sys.argv
+#plik2=open(sys.argv[1])
+#slownik3={}
+#for linia in plik2:
+#    for slowo in linia.split():
+#        if(slowo in slownik3):
+#           slownik3[slowo]+=1
+#        else:
+#            slownik3[slowo]=1
+#print slownik3
+#plik2.close()
+
+#Zadanie 4
+if(sys.argv[1]=="-"):
+    linie=""""""
+    liniaa=input("")
+    while liniaa:
+        linie.join(liniaa)
+        liniaa=input("")
+else:
+    plik3=open(sys.argv[1])
+    linie=plik3.read()
+for linia in linie.splitlines():
+    if(sys.argv[2] in linia):
+        print linia
+plik3.close()
+ 
