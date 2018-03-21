@@ -49,3 +49,21 @@ for linia in linie.splitlines():
         print linia
 plik3.close()
  
+#Zadani3 5
+plik4=open(sys.argv[1])
+plik5.open(sys.argv[2])
+tekst=plik4.read()
+for linia in tekst.splitlines():
+    for znak in linia:
+        if znak>=97 and znak<=122:
+            if znak+3>122:
+                znak=znak-26+3
+            else:
+                znak=znak+3
+        if znak>=65 and znak<=90:
+            if znak+3>90:
+                znak=znak-26+3
+            else:
+                znak=znak+3
+plik5.write(tekst)
+
