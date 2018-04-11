@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+# encoding: utf-8
+import math
+def pierwiastek(liczba):
+    try:
+        print(math.pow(liczba,0.5))
+    except ValueError:
+        print ("Mozna pierwiastkowac tylko liczby dodatnie.")
+    except TypeError:
+        print ("Wartosc musi byc liczba.")
+        
+pierwiastek(4)
+pierwiastek(-4)
+pierwiastek('test')
